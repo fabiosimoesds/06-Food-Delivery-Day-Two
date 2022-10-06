@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require_relative 'app/repositories/customer_repository'
 require_relative 'app/repositories/meal_repository'
 require_relative 'app/repositories/employee_repository'

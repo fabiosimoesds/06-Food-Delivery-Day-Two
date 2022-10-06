@@ -7,49 +7,49 @@ class Router
     @running = true
   end
 
-  # def manager_loop
-  #   display_tasks_meals
-  #   display_tasks_customers
-  #   action = gets.chomp.to_i
-  #   print `clear`
-  #   manager_meals_action(action)
-  # end
+  def manager_loop
+    display_tasks_meals
+    display_tasks_customers
+    action = gets.chomp.to_i
+    print `clear`
+    manager_meals_action(action)
+  end
 
-  # def rider_loop
-  #     display_tasks_riders
-  #     action = gets.chomp.to_i
-  #     print `clear`
-  #     riders_action(action)
-  # end
+  def rider_loop
+      display_tasks_riders
+      action = gets.chomp.to_i
+      print `clear`
+      riders_action(action)
+  end
 
-  # def run
-  #   puts "Welcome to the FoodDelivery!"
-  #   puts "           --           "
-  #   while @running
-  #     # ask for login
-  #     login_menu
-  #     action = gets.chomp.to_i
-  #     if action == 1
-  #       @employee = @sessions_controller.login
-  #       until action.zero?
-  #         if @employee.manager?
-  #           display_tasks_meals
-  #           display_tasks_customers
-  #           action = gets.chomp.to_i
-  #           print `clear`
-  #           manager_meals_action(action)
-  #         else
-  #           display_tasks_riders
-  #           action = gets.chomp.to_i
-  #           print `clear`
-  #           riders_action(action)
-  #         end
-  #       end
-  #     else
-  #       stop
-  #     end
-  #   end
-  # end
+  def run
+    puts "Welcome to the FoodDelivery!"
+    puts "           --           "
+    while @running
+      # ask for login
+      login_menu
+      action = gets.chomp.to_i
+      if action == 1
+        @employee = @sessions_controller.login
+        until action.zero?
+          if @employee.manager?
+            display_tasks_meals
+            display_tasks_customers
+            action = gets.chomp.to_i
+            print `clear`
+            manager_meals_action(action)
+          else
+            display_tasks_riders
+            action = gets.chomp.to_i
+            print `clear`
+            riders_action(action)
+          end
+        end
+      else
+        stop
+      end
+    end
+  end
 
   private
 
