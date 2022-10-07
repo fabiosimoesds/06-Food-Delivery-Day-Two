@@ -40,8 +40,9 @@ class MealsController
     index = @meal_view.ask_info('Which meal would you like to edit?').to_i - 1
     name = @meal_view.ask_info('New name:')
     price = @meal_view.ask_info('New Price:')
+    attributes = { index: index, name: name, price: price }
     # Display the updated list
     # Edit that meal from the repository - Array
-    @meals.change(index, name, price)
+    @meals.change(attributes)
   end
 end

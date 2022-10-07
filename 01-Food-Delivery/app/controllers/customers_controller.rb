@@ -39,8 +39,9 @@ class CustomersController
     index = @customers_view.ask_for('Which customer would you like to edit?').to_i - 1
     name = @customers_view.ask_for('New name:')
     address = @customers_view.ask_for('New address:')
+    attributes = {index: index, name: name, address: address}
     # Display the updated list
     # Edit that customer from the repository - Array
-    @customers.change(index, name, address)
+    @customers.change(attributes)
   end
 end
